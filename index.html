@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Dark</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            DASH
+        </div>
+
+        <div class="menu">
+            <a href="index.html">Inicio</a>
+            <a href="./pages/audioModel.html">Usuarios</a>
+            <a href="./pages/imageModel.html">Productos</a>
+            <a href="./pages/colabImage.html">Productos</a>
+        </div>
+
+    </aside>
+
+    <!-- CONTENIDO -->
+
+    <main class="main">
+
+        <div class="header">
+            <h1>Dashboard Principal</h1>
+            <p>Vista general del sistema</p>
+        </div>
+
+        <!-- KPIs -->
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Usuarios</h3>
+                <div class="value">12,548</div>
+            </div>
+
+            <div class="card">
+                <h3>Ventas</h3>
+                <div class="value">4,291</div>
+            </div>
+
+            <div class="card">
+                <h3>Ingresos</h3>
+                <div class="value">$42K</div>
+            </div>
+
+            <div class="card">
+                <h3>Crecimiento</h3>
+                <div class="value">+23%</div>
+            </div>
+
+        </div>
+
+        <!-- GRÁFICOS -->
+
+        <div class="charts">
+
+            <div class="chart-box">
+                <h2>Ventas Mensuales</h2>
+                <canvas id="salesChart"></canvas>
+            </div>
+
+            <div class="chart-box">
+                <h2>Distribución</h2>
+                <canvas id="pieChart"></canvas>
+            </div>
+
+        </div>
+
+        <!-- TABLA -->
+
+        <div class="table-box">
+
+            <div class="table-title">
+                <h2>Actividad Reciente</h2>
+            </div>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Acción</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Carlos Ruiz</td>
+                        <td>Compra realizada</td>
+                        <td><span class="badge success">Completado</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>María López</td>
+                        <td>Registro de cuenta</td>
+                        <td><span class="badge warning">Pendiente</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Juan Pérez</td>
+                        <td>Actualizó perfil</td>
+                        <td><span class="badge success">Completado</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Ana Torres</td>
+                        <td>Error de pago</td>
+                        <td><span class="badge danger">Falló</span></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+    <script src="./script/script.js">
+
+    </script>
+
+</body>
+
+</html>

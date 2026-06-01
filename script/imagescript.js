@@ -57,7 +57,7 @@ async function cargarModelo() {
     try {
 
         resultado.innerHTML =
-            "⏳ Cargando modelo IA...";
+            "Cargando modelo IA...";
 
         const modelURL =
             "../modeloClasification/model.json";
@@ -169,7 +169,7 @@ async function iniciarCamara() {
         console.error(error);
 
         resultado.innerHTML =
-            "❌ No se pudo acceder a la cámara";
+            "No se pudo acceder a la cámara";
     }
 }
 
@@ -200,7 +200,7 @@ function apagarCamara() {
         "0%";
 
     resultado.innerHTML =
-        "📷 Cámara apagada";
+        "Cámara apagada";
 }
 
 // ======================

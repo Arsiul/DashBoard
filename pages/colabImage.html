@@ -4,50 +4,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Dark</title>
+    <title>Dashboard — Análisis de Residuos</title>
     <link rel="stylesheet" href="../style/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
+    <link rel="stylesheet" href="../style/colabImage.css">
 </head>
 
 <body>
 
     <aside class="sidebar">
-
-        <div class="logo">
-            DASH
-        </div>
-
+        <div class="logo">DASH</div>
         <div class="menu">
             <a href="../index.html">Inicio</a>
             <a href="../pages/audioModel.html">Usuarios</a>
             <a href="../pages/imageModel.html">Productos</a>
-            <a href="./colabImage.html">Productos</a>
+            <a href="./colabImage.html" class="active">Gráficos</a>
         </div>
-
     </aside>
 
-
-
     <main class="main">
+        <div class="colab-page">
 
+            <!-- Hero -->
+            <div class="colab-hero">
+                <p class="label">Análisis de datos · Google Colab</p>
+                <h1>¿Por qué clasificar<br>residuos en el Perú?</h1>
+                <p>
+                    El siguiente análisis utiliza datos históricos del MINAM para demostrar
+                    el crecimiento sostenido de residuos municipales en el país. Estos gráficos,
+                    generados con Python y Matplotlib, justifican la necesidad de un sistema
+                    inteligente de clasificación de residuos sólidos.
+                </p>
+            </div>
 
+            <!-- Stats rápidas -->
+            <div class="colab-stats">
+                <div class="stat-card">
+                    <div class="stat-value">8.5M</div>
+                    <div class="stat-label">Toneladas generadas en 2022</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">+9%</div>
+                    <div class="stat-label">Crecimiento entre 2019 y 2022</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">+70%</div>
+                    <div class="stat-label">De residuos provienen de la Costa</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">Lima</div>
+                    <div class="stat-label">Departamento con mayor generación</div>
+                </div>
+            </div>
 
+            <!-- Gráficos -->
+            <p class="colab-section-title">Gráficos generados en Colab</p>
 
+            <div class="charts-grid">
 
+                <!-- Gráfico 1: Líneas -->
+                <div class="chart-card">
+                    <img src="../img/grafico1.jpg" alt="Evolución anual de residuos municipales en Perú 2019-2022">
+                    <div class="chart-info">
+                        <span class="chart-tag">Gráfico de líneas</span>
+                        <h2 class="chart-title">Evolución anual de residuos municipales (2019–2022)</h2>
+                        <p class="chart-desc">
+                            La tendencia es clara: la generación de residuos municipales en el Perú
+                            ha crecido cada año sin excepción. Pasando de aproximadamente 7.8 millones
+                            a 8.5 millones de toneladas anuales, la curva ascendente confirma que
+                            el problema no se detiene por sí solo y requiere soluciones activas
+                            como la clasificación correcta en la fuente.
+                        </p>
+                    </div>
+                </div>
 
+                <!-- Gráfico 2: Barras -->
+                <div class="chart-card">
+                    <img src="../img/grafico2.jpg" alt="Top 5 departamentos con mayor generación de residuos municipales">
+                    <div class="chart-info">
+                        <span class="chart-tag">Gráfico de barras</span>
+                        <h2 class="chart-title">Top 5 departamentos con mayor generación</h2>
+                        <p class="chart-desc">
+                            Lima acumula una cantidad de residuos que supera por amplio margen a
+                            cualquier otro departamento, siendo casi 8 veces mayor que el segundo
+                            lugar. Le siguen Piura, La Libertad, Callao y Arequipa. Esta concentración
+                            evidencia la necesidad urgente de infraestructura de reciclaje en las
+                            zonas urbanas más pobladas del país.
+                        </p>
+                    </div>
+                </div>
 
+                <!-- Gráfico 3: Circular -->
+                <div class="chart-card">
+                    <img src="../img/grafico3.jpg" alt="Distribución de residuos municipales por región natural del Perú">
+                    <div class="chart-info">
+                        <span class="chart-tag">Gráfico circular</span>
+                        <h2 class="chart-title">Distribución por región natural</h2>
+                        <p class="chart-desc">
+                            La región Costa concentra casi la mitad (47%) de todos los residuos
+                            municipales generados en el país. Lima y Callao suman un 23.5% adicional,
+                            lo que significa que las zonas costeras representan más del 70% del total.
+                            La Sierra aporta el 19.5% y la Selva tan solo el 10%, a pesar de ser
+                            la región geográficamente más extensa.
+                        </p>
+                    </div>
+                </div>
 
+                <!-- Gráfico 4: Dispersión -->
+                <div class="chart-card">
+                    <img src="../img/grafico4.jpg" alt="Relación entre población total y residuos municipales generados">
+                    <div class="chart-info">
+                        <span class="chart-tag">Gráfico de dispersión</span>
+                        <h2 class="chart-title">Relación entre población y residuos</h2>
+                        <p class="chart-desc">
+                            Existe una correlación positiva muy marcada: a mayor población total
+                            de un distrito o municipio, mayor es la cantidad de residuos generados.
+                            Esto confirma que el crecimiento demográfico sostenido del Perú irá
+                            de la mano con un aumento proporcional de residuos, haciendo que la
+                            gestión inteligente sea cada vez más crítica.
+                        </p>
+                    </div>
+                </div>
 
+                <!-- Gráfico 5: Histograma -->
+                <div class="chart-card">
+                    <img src="../img/grafico5.jpg" alt="Distribución de la generación de residuos per cápita domiciliaria">
+                    <div class="chart-info">
+                        <span class="chart-tag">Histograma</span>
+                        <h2 class="chart-title">Generación per cápita domiciliaria</h2>
+                        <p class="chart-desc">
+                            La mayoría de registros se concentra alrededor de 0.45 kg por habitante
+                            al día, con una distribución sesgada hacia la derecha que indica la
+                            existencia de zonas con generación considerablemente más alta. Conocer
+                            este dato per cápita es fundamental para diseñar campañas de reducción
+                            y sistemas de clasificación adaptados a la realidad de cada localidad.
+                        </p>
+                    </div>
+                </div>
 
+            </div>
 
-        
+            <!-- Conclusión -->
+            <div class="colab-conclusion">
+                <p>
+                    <strong>Conclusión del análisis:</strong> Los datos demuestran que el Perú genera
+                    millones de toneladas de residuos por año y la tendencia es creciente. Sin una
+                    clasificación adecuada en la fuente, la mayor parte de estos residuos termina en
+                    rellenos sanitarios o botaderos. Un <strong>clasificador inteligente de residuos sólidos</strong>
+                    como el desarrollado en este proyecto representa una solución directa y escalable
+                    para este problema.
+                </p>
+            </div>
+
+        </div>
     </main>
-
-    <script src="./script/script.js">
-
-    </script>
 
 </body>
 

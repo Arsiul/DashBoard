@@ -60,10 +60,10 @@ async function cargarModelo() {
             "Cargando modelo IA...";
 
         const modelURL =
-            "../modeloClasification/model.json";
+            "../modeloclasification/model.json";
 
         const metadataURL =
-            "../modeloClasification/metadata.json";
+            "../modeloclasification/metadata.json";
 
         model =
             await tmImage.load(

@@ -265,7 +265,7 @@ function obtenerIcono(clase) {
             "vid"
         )
     ){
-        return "🍾";
+        return "";
     }
 
     if(

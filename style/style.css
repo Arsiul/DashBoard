@@ -213,3 +213,8 @@
                 width: calc(100% - 80px);
             }
         }
+
+        .menu a.active {
+            background: #38bdf8;
+            color: #000;
+        }

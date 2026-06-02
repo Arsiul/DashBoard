@@ -1,6 +1,10 @@
-// Ruta corregida según tu estructura actual (sube un nivel y busca modeloAudio)
-const URL = "http://localhost:8000/modeloAudio/";
 let recognizer, labelContainer, maxPredictions;
+
+// ✅ RUTA RELATIVA (funciona con Live Server)
+const MODEL_PATH = window.location.origin + "/modeloAudio/";
+
+const checkpointURL = MODEL_PATH + "model.json";
+const metadataURL = MODEL_PATH + "metadata.json";
 
 function normalizeClassName(label) {
     return label.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -32,9 +36,6 @@ function getActionMessage(label, percent) {
 }
 
 async function init() {
-    const checkpointURL = URL + "model.json";
-    const metadataURL = URL + "metadata.json";
-
     recognizer = speechCommands.create(
         "BROWSER_FFT",
         undefined,
@@ -50,47 +51,54 @@ async function init() {
     labelContainer = document.getElementById("label-container");
     labelContainer.innerHTML = "<div class='prediction-grid'></div>";
 
-    const predictionGrid = labelContainer.querySelector(".prediction-grid");
-
     recognizer.listen(result => {
-        const predictions = classLabels.map((label, index) => {
-            const percentage = Math.round(result.scores[index] * 100);
-            return { label, percentage };
-        });
+        const predictions = classLabels.map((label, index) => ({
+            label,
+            percentage: Math.round(result.scores[index] * 100)
+        }));
 
-        const visiblePredictions = predictions.filter(prediction => normalizeClassName(prediction.label) !== "ruido-de-fondo");
+        const visiblePredictions = predictions.filter(
+            p => normalizeClassName(p.label) !== "ruido-de-fondo"
+        );
+
         const bestPrediction = visiblePredictions.length > 0
-            ? visiblePredictions.reduce((best, current) => current.percentage > best.percentage ? current : best, visiblePredictions[0])
+            ? visiblePredictions.reduce((best, current) =>
+                current.percentage > best.percentage ? current : best
+              )
             : { label: "Ruido de fondo", percentage: 0 };
 
         const statusMessage = visiblePredictions.length > 0
             ? getActionMessage(bestPrediction.label, bestPrediction.percentage)
-            : "Se detectó ruido de fondo. Esperando un sonido válido para hacer la clasificación.";
+            : "Se detectó ruido de fondo. Esperando un sonido válido.";
 
-        const statusClass = (visiblePredictions.length > 0 && bestPrediction.percentage > 75) ? "status-success" : "status-wait";
-        const cardStateClass = (visiblePredictions.length > 0 && bestPrediction.percentage > 75) ? getStatusClass(bestPrediction.label) : "";
+        const statusClass =
+            visiblePredictions.length > 0 && bestPrediction.percentage > 75
+                ? "status-success"
+                : "status-wait";
 
         const predictionsHTML = visiblePredictions.map(prediction => {
-            const progressWidth = `${prediction.percentage}%`;
-            const isWinner = visiblePredictions.length > 0 && prediction.label === bestPrediction.label;
-            const itemClass = isWinner && bestPrediction.percentage > 75 ? `prediction-card detected-high ${cardStateClass}` : "prediction-card";
+            const isWinner = prediction.label === bestPrediction.label;
 
             return `
-                <div class="${itemClass}">
+                <div class="prediction-card ${isWinner ? "detected-high" : ""}">
                     <div class="prediction-header">
                         <span class="prediction-label">${prediction.label}</span>
                         <span class="prediction-percentage">${prediction.percentage}%</span>
                     </div>
                     <div class="progress-track">
-                        <div class="progress-bar" style="width: ${progressWidth};"></div>
+                        <div class="progress-bar" style="width:${prediction.percentage}%"></div>
                     </div>
                 </div>
             `;
         }).join("");
 
         labelContainer.innerHTML = `
-            <div class="status-banner ${statusClass}">${statusMessage}</div>
-            <div class="prediction-grid">${predictionsHTML}</div>
+            <div class="status-banner ${statusClass}">
+                ${statusMessage}
+            </div>
+            <div class="prediction-grid">
+                ${predictionsHTML}
+            </div>
         `;
     }, {
         includeSpectrogram: true,

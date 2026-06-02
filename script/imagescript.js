@@ -235,57 +235,6 @@ async function detectarTiempoReal() {
     );
 }
 
-// ======================
-// ICONOS
-// ======================
-
-function obtenerIcono(clase) {
-
-    const texto =
-        clase.toLowerCase();
-
-    if(
-        texto.includes(
-            "plast"
-        )
-    ){
-        return "";
-    }
-
-    if(
-        texto.includes(
-            "pap"
-        )
-    ){
-        return "";
-    }
-
-    if(
-        texto.includes(
-            "vid"
-        )
-    ){
-        return "";
-    }
-
-    if(
-        texto.includes(
-            "metal"
-        )
-    ){
-        return "";
-    }
-
-    if(
-        texto.includes(
-            "carton"
-        )
-    ){
-        return "";
-    }
-
-    return "";
-}
 
 // ======================
 // RESULTADO
@@ -318,9 +267,7 @@ function mostrarResultado(
             style="
                 font-size:4rem;
             ">
-                ${obtenerIcono(
-                    mejorClase
-                )}
+
             </div>
 
             <div

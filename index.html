@@ -4,136 +4,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Dark</title>
+    <title>Dashboard de Modelos IA</title>
+
     <link rel="stylesheet" href="./style/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
 </head>
 
 <body>
 
+    <!-- SIDEBAR -->
     <aside class="sidebar">
 
         <div class="logo">
-            DASH
+            DASHBOARD DE MODELOS
         </div>
 
         <div class="menu">
-            <a href="index.html">Inicio</a>
-            <a href="./pages/audioModel.html">Usuarios</a>
-            <a href="./pages/imageModel.html">Productos</a>
-            <a href="./pages/colabImage.html">Gráficos</a>
+            <a href="index.html" class="active">Inicio</a>
+            <a href="./pages/audioModel.html">Clasificador Audio</a>
+            <a href="./pages/imageModel.html">Clasificador de Imagen (cámara)</a>
+            <a href="./pages/colabImage.html">Gráficos (Colab)</a>
         </div>
 
     </aside>
 
     <!-- CONTENIDO -->
-
     <main class="main">
 
-        <div class="header">
-            <h1>Dashboard Principal</h1>
-            <p>Vista general del sistema</p>
-        </div>
+        <section class="hero">
+            <h1>Plataforma de Inteligencia Artificial</h1>
+            <p>
+                Explora modelos de aprendizaje automático en tiempo real aplicados a audio, visión por computadora y análisis de datos.
+            </p>
+        </section>
 
-        <!-- KPIs -->
+        <!-- AUDIO -->
+        <section class="card">
+            <h2>Reconocimiento de Voz en Tiempo Real</h2>
 
-        <div class="cards">
+            <p>
+                Este modelo permite identificar sonidos en tiempo real utilizando el micrófono del dispositivo.
+                Está entrenado con aprendizaje automático para clasificar diferentes tipos de audio.
+            </p>
 
-            <div class="card">
-                <h3>Usuarios</h3>
-                <div class="value">12,548</div>
-            </div>
+            <p>
+                El sistema puede reconocer los siguientes sonidos de animales:
+                perro, gato, oveja, pollito y vaca.
+            </p>
 
-            <div class="card">
-                <h3>Ventas</h3>
-                <div class="value">4,291</div>
-            </div>
+            <p>
+                Cada sonido es analizado y clasificado según su patrón acústico.
+            </p>
 
-            <div class="card">
-                <h3>Ingresos</h3>
-                <div class="value">$42K</div>
-            </div>
+            <p class="highlight">
+                Permite detectar sonidos en vivo y responder inmediatamente según la clasificación del modelo.
+            </p>
+        </section>
 
-            <div class="card">
-                <h3>Crecimiento</h3>
-                <div class="value">+23%</div>
-            </div>
+        <!-- RESIDUOS -->
+        <section class="card">
+            <h2>Reconocimiento de Residuos</h2>
 
-        </div>
+            <p>
+                Este modelo utiliza visión por computadora para identificar objetos mediante cámara o imágenes.
+            </p>
 
-        <!-- GRÁFICOS -->
+            <p>
+                Puede clasificar los siguientes tipos de residuos:
+                vidrio, aluminio, residuo orgánico, cartón y plástico.
+            </p>
 
-        <div class="charts">
+            <p>
+                Su objetivo es mejorar la automatización del reciclaje y la clasificación de desechos.
+            </p>
 
-            <div class="chart-box">
-                <h2>Ventas Mensuales</h2>
-                <canvas id="salesChart"></canvas>
-            </div>
+            <p class="highlight">
+                Contribuye directamente a la sostenibilidad y al cuidado del medio ambiente mediante IA.
+            </p>
+        </section>
 
-            <div class="chart-box">
-                <h2>Distribución</h2>
-                <canvas id="pieChart"></canvas>
-            </div>
+        <!-- IMPORTANCIA -->
+        <section class="card">
+            <h2>Importancia de la Inteligencia Artificial</h2>
 
-        </div>
+            <p>
+                La inteligencia artificial está transformando la forma en que interactuamos con la tecnología moderna.
+            </p>
 
-        <!-- TABLA -->
+            <p>
+                Permite automatizar procesos, mejorar la precisión y optimizar recursos en múltiples sectores.
+            </p>
 
-        <div class="table-box">
+            <p>
+                Sus aplicaciones incluyen educación, salud, industria, seguridad y medio ambiente.
+            </p>
 
-            <div class="table-title">
-                <h2>Actividad Reciente</h2>
-            </div>
-
-            <table>
-
-                <thead>
-                    <tr>
-                        <th>Usuario</th>
-                        <th>Acción</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                    <tr>
-                        <td>Carlos Ruiz</td>
-                        <td>Compra realizada</td>
-                        <td><span class="badge success">Completado</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>María López</td>
-                        <td>Registro de cuenta</td>
-                        <td><span class="badge warning">Pendiente</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Juan Pérez</td>
-                        <td>Actualizó perfil</td>
-                        <td><span class="badge success">Completado</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Ana Torres</td>
-                        <td>Error de pago</td>
-                        <td><span class="badge danger">Falló</span></td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
+            <p class="highlight">
+                Los sistemas inteligentes representan el futuro de la automatización y la toma de decisiones.
+            </p>
+        </section>
 
     </main>
 
-    <script src="./script/script.js">
-
-    </script>
+    <script src="./script/script.js"></script>
 
 </body>
 
